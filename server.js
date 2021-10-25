@@ -3,26 +3,27 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
 
+// import actions
+const home = require("./views/actions/home/action");
+const about = require("./views/actions/about/action");
+
 // set view engine to ejs
 app.set("view engine", "ejs");
 
-// index page
+// home page
 app.get("/", function(req, res) {
-    let mascots = [
-        { name: "Sammy", organization: "DigitalOcean", birth_year: 2012 },
-        { name: "Tux", organization: "Linux", birth_year: 1996 },
-        { name: "Moby Dock", organization: "Docker", birth_year: 2013 },
-    ];
-    let tagline = "No programming concept is complete without a cute animal mascot.";
-    res.render("pages/index", {
-        mascots: mascots,
-        tagline: tagline
+    res.render("pages/home", {
+        mascots: home.mascots,
+        tagline: home.tagline,
     });
 });
 
 // about page
 app.get("/about", function(req, res) {
-    res.render("pages/about");
+    res.render("pages/about", {
+        title: about.content.title,
+        message: about.content.message,
+    });
 });
 
 // listen the server
