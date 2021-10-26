@@ -12,6 +12,9 @@ const contactUs = require("./src/contact-us/action");
 // set view engine to ejs
 app.set("view engine", "ejs");
 
+// set static files
+app.use(express.static(__dirname + '/src'));
+
 // page routes
 app.get("/", function(req, res) {
     res.render("pages/home", {
