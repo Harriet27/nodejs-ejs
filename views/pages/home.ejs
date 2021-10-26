@@ -9,13 +9,17 @@
         </header>
         <main>
             <div class="jumbotron">
-                <h1>Top Mascots</h1>
-                <p><%= tagline %></p>
+                <h1>
+                    Mascots Data List
+                </h1>
+                <p>
+                    <%= tagline %>
+                </p>
                 <ul>
                     <% mascots.forEach(function(mascot) { %>
                         <li>
                             <strong><%= mascot.name %></strong>
-                            representing <%= mascot.organization %>, born <%= mascot.birth_year %>
+                            representing <strong><%= mascot.organization %></strong>, born <strong><%= mascot.birth_year %></strong>
                         </li>
                     <% }); %>
                 </ul>
@@ -25,4 +29,5 @@
             <%- include('../components/footer'); %>
         </footer>
     </body>
+    <%- include('../components/script'); %>
 </html>

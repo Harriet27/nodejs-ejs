@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
+const reload = require("reload");
 
 // import actions
 const home = require("./src/home/action");
@@ -36,3 +37,5 @@ app.get("/contact-us", function(req, res) {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
+// hot reload the browser
+reload(app);

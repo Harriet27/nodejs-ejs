@@ -12,7 +12,7 @@
                 <div class="col-sm-4" style="padding: 10px 15px;">
                     <div class="well">
                         <div class="sidebar-txt">
-                            Sidebar
+                            Menu Sidebar
                         </div>
                         <% option.forEach(function(val) { %>
                             <a href="<%= val.url %> ">
@@ -39,6 +39,7 @@
             <%- include('../components/footer'); %>
         </footer>
     </body>
+    <%- include('../components/script'); %>
     <style>
         .sidebar-txt {
             font-size: xx-large;
