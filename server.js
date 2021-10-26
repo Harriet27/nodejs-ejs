@@ -5,15 +5,15 @@ const port = process.env.PORT || 8080;
 const reload = require("reload");
 
 // import actions
-const home = require("./src/home/action");
-const about = require("./src/about/action");
-const contactUs = require("./src/contact-us/action");
+const home = require("./public/pages/home/action");
+const about = require("./public/pages/about/action");
+const contactUs = require("./public/pages/contact-us/action");
 
 // set view engine to ejs
 app.set("view engine", "ejs");
 
 // set static files
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/public'));
 
 // page routes
 app.get("/", function(req, res) {
